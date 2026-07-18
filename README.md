@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📖 Blog Demo — CodeIgniter 4 + Shield
+# 📖 Blog App — CodeIgniter 4 + Shield
 
 **Curso completo e gratuito no YouTube: do zero ao deploy, um commit por aula.**
 
@@ -8,9 +8,9 @@
 [![CodeIgniter](https://img.shields.io/badge/CodeIgniter-4.7-EF4223?logo=codeigniter&logoColor=white)](https://codeigniter.com/)
 [![Shield](https://img.shields.io/badge/Shield-1.3-17A2B8)](https://shield.codeigniter.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![YouTube](https://img.shields.io/badge/YouTube-Stack%20Code-FF0000?logo=youtube&logoColor=white)](COLE_AQUI_O_LINK_DO_CANAL)
+[![YouTube](https://img.shields.io/badge/YouTube-Salomao%20Pena-FF0000?logo=youtube&logoColor=white)](COLE_AQUI_O_LINK_DO_CANAL)
 
-*Site público com estilo apple.com · Login e papéis com Shield · Painel admin responsivo · IDs cifrados na URL · Notificações internas · E-mails via Events*
+*Site público com: Login e papéis com Shield · Painel admin responsivo · IDs cifrados na URL · Notificações internas · E-mails via Events*
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ## 🎬 As 16 aulas
 
-> Clique na thumbnail para assistir. 📌 **Para publicar:** troque cada `COLE_O_LINK_DA_AULA_NN` pela URL do vídeo no YouTube (aparece 2× por aula: na imagem e no botão ▶).
+> Clique na thumbnail para assistir..
 
 | # | Aula | Assistir |
 |:-:|------|:--------:|
@@ -56,8 +56,8 @@
 
 ```bash
 # 1. Clonar e instalar dependências
-git clone COLE_AQUI_O_LINK_DO_REPOSITORIO
-cd blogci4
+git clone https://github.com/salomaopena/blogapp.git
+cd blogapp
 composer install
 
 # 2. Configurar o ambiente
@@ -106,12 +106,12 @@ app/
 
 ## 📜 Licença
 
-Código aberto para fins educacionais — use, estude e evolua. Se este projeto te ajudou, ⭐ o repositório e se inscreva no canal!
+Código aberto para fins educacionais — use, estude e evolua. Se este projeto te ajudou, dá uma ⭐ no repositório e se inscreva no canal!
 
 ---
 
 <div align="center">
 
-**Feito com ❤️ pelo canal [Stack Code](COLE_AQUI_O_LINK_DO_CANAL) · do zero ao deploy**
+**Feito com ❤️ pelo canal [Salomão Pena](COLE_AQUI_O_LINK_DO_CANAL) · do zero ao deploy**
 
 </div>
