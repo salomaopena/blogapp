@@ -72,3 +72,70 @@
      color: #d2d2d7;
      text-decoration: none;
  }
+
+
+ /*Administração*/
+
+ /* Modo gaveta (mobile): o offcanvas pinta o fundo via variável do Bootstrap. */
+ .sidebar {
+     --bs-offcanvas-width: 260px;
+     --bs-offcanvas-bg: #1a1d21;
+ }
+
+ /* Modo estendido (>=992px): o Bootstrap força `background-color: transparent !important`
+           no .offcanvas-lg e no .offcanvas-body — por isso o fundo escuro precisa de !important aqui,
+           e o corpo volta a crescer para empurrar o bloco do usuário para o rodapé. */
+ @media (min-width: 992px) {
+     .sidebar {
+         width: 260px;
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         background-color: #1a1d21 !important;
+     }
+
+     .sidebar .offcanvas-body {
+         flex-grow: 1;
+     }
+ }
+
+ .sidebar .nav-link {
+     color: #aeb4bc;
+     border-radius: .6rem;
+ }
+
+ .sidebar .nav-link:hover {
+     color: #fff;
+     background: #2a2f36;
+ }
+
+ .sidebar .nav-link.active {
+     color: #fff;
+     background: #EF4223;
+ }
+
+ .stat-icon {
+     width: 52px;
+     height: 52px;
+     border-radius: 1rem;
+     display: grid;
+     place-items: center;
+     font-size: 1.4rem;
+ }
+
+ .card {
+     border: 0;
+     box-shadow: 0 2px 12px rgba(16, 24, 40, .06);
+     border-radius: 1rem;
+ }
+
+ .avatar {
+     width: 36px;
+     height: 36px;
+     border-radius: 50%;
+     background: #EF4223;
+     color: #fff;
+     display: grid;
+     place-items: center;
+     font-weight: 700;
+ }
