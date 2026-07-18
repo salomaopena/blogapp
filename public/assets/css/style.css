@@ -1,0 +1,74 @@
+ :root {
+     --brand: #EF4223;
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     color: #1d1d1f;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ .navbar-brand {
+     font-family: 'Nunito', sans-serif;
+     font-weight: 800;
+     letter-spacing: -.02em;
+ }
+
+ .navbar-glass {
+     background: rgba(255, 255, 255, .82);
+     backdrop-filter: blur(20px);
+     border-bottom: 1px solid #e5e5e7;
+ }
+
+ .hero {
+     padding: 110px 0 70px;
+     text-align: center;
+ }
+
+ .hero h1 {
+     font-size: clamp(42px, 6vw, 64px);
+ }
+
+ .hero .lead {
+     color: #6e6e73;
+     font-size: 1.35rem;
+ }
+
+ .card-post {
+     border: 0;
+     border-radius: 1.25rem;
+     box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
+     transition: transform .2s ease, box-shadow .2s ease;
+ }
+
+ .card-post:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+ }
+
+ .btn-brand {
+     background: var(--brand);
+     color: #fff;
+     border-radius: 2rem;
+     padding: .55rem 1.5rem;
+     font-weight: 600;
+ }
+
+ .btn-brand:hover {
+     background: #d63a1f;
+     color: #fff;
+ }
+
+ footer {
+     background: #1d1d1f;
+     color: #9aa1ab;
+ }
+
+ footer a {
+     color: #d2d2d7;
+     text-decoration: none;
+ }
