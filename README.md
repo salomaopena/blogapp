@@ -22,8 +22,8 @@
 
 | # | Aula | Assistir |
 |:-:|------|:--------:|
-| 01 | [![Aula 01](docs/thumbnails/aula-01.png)](COLE_O_LINK_DA_AULA_01)<br>**Construí um sistema COMPLETO com CodeIgniter 4 + Shield (login, papéis, notificações) — e vou te ensinar do zero** | [▶ Assistir](COLE_O_LINK_DA_AULA_01) |
-| 02 | [![Aula 02](docs/thumbnails/aula-02.png)](COLE_O_LINK_DA_AULA_02)<br>**CodeIgniter 4 em 2026: instalação do zero com Composer (PHP 8.3)** | [▶ Assistir](COLE_O_LINK_DA_AULA_02) |
+| 01 | [![Aula 01](docs/thumbnails/aula-01.png)](https://youtu.be/3bQZHi6DhN4)<br>**Construí um sistema COMPLETO com CodeIgniter 4 + Shield (login, papéis, notificações) — e vou te ensinar do zero** | [▶ Assistir](COLE_O_LINK_DA_AULA_01) |
+| 02 | [![Aula 02](docs/thumbnails/aula-02.png)](https://youtu.be/woUf2xyvVLo)<br>**CodeIgniter 4 em 2026: instalação do zero com Composer (PHP 8.3)** | [▶ Assistir](COLE_O_LINK_DA_AULA_02) |
 | 03 | [![Aula 03](docs/thumbnails/aula-03.png)](COLE_O_LINK_DA_AULA_03)<br>**Autenticação PRONTA no CodeIgniter 4 com Shield (login + registro em 1 comando)** | [▶ Assistir](COLE_O_LINK_DA_AULA_03) |
 | 04 | [![Aula 04](docs/thumbnails/aula-04.png)](COLE_O_LINK_DA_AULA_04)<br>**Papéis de usuário no Shield: admin, editor e member (AuthGroups na prática)** | [▶ Assistir](COLE_O_LINK_DA_AULA_04) |
 | 05 | [![Aula 05](docs/thumbnails/aula-05.png)](COLE_O_LINK_DA_AULA_05)<br>**Site PROFISSIONAL no CodeIgniter 4: Bootstrap 5 + layout estilo Apple (e login bonito no Shield)** | [▶ Assistir](COLE_O_LINK_DA_AULA_05) |
