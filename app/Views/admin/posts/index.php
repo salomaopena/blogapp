@@ -27,7 +27,7 @@
                     </tr>
                 <?php endif ?>
                 <?php foreach ($posts as $post): ?>
-                    <!--<php $hash = \App\Libraries\IdCodec::encode((int) $post['id']); ?> -->
+                    <?php $hash = \App\Libraries\IdCodec::encode((int) $post['id']); ?>
                     <tr>
                         <td class="ps-4 fw-semibold"><?= esc($post['titulo']) ?></td>
                         <td>
@@ -40,15 +40,12 @@
                         <td class="text-secondary"><?= esc(date('d/m/Y', strtotime($post['created_at']))) ?>
                         </td>
                         <td class="text-end pe-4">
-                            <a class="btn btn-sm btn-outline-secondary"
-                                href="<?= site_url('admin/posts/editar/') ?>">
+                            <a class="btn btn-sm btn-outline-secondary" href="<?= site_url('admin/posts/editar/' . $hash) ?>">
                                 <i class="bi bi-pencil"></i>
                             </a>
-                            <form method="post" action="<?= site_url('admin/posts/apagar/') ?>" 
-                            class="d-inline">
+                            <form method="post" action="<?= site_url('admin/posts/apagar/' . $hash) ?>" class="d-inline">
                                 <?= csrf_field() ?>
-                                <button class="btn btn-sm btn-outline-danger" 
-                                onclick="return confirm('Apagar este post?')">
+                                <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Apagar este post?')">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </form>

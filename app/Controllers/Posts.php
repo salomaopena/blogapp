@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Libraries\IdCodec;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\PostModel;
 
@@ -38,6 +39,51 @@ class Posts extends BaseController
     {
         return view('admin/posts/form', ['post' => []]);
     }
+
+
+    public function editar(string $hash)
+    {
+        $post = $this->buscarPorHash($hash);
+
+        return view('admin/posts/form', ['post' => $post]);
+    }
+
+
+    public function atualizar(string $hash)
+    {
+        $post = $this->buscarPorHash($hash);
+        $model = new PostModel();
+        $ok = $model->update($post['id'], [
+            'titulo' => $this->request->getPost('titulo'),
+            'conteudo' => $this->request->getPost('conteudo'),
+            'publicado' => (int) $this->request->getPost('publicado'),
+        ]);
+
+        if (!$ok) {
+            return redirect()->back()->withInput()->with('erros', $model->errors());
+        }
+        return redirect()->to('admin/posts')->with('msg', 'Post atualizado com sucesso');
+    }
+
+
+    public function apagar(string $hash)
+    {
+        $post = $this->buscarPorHash($hash);
+        (new PostModel())->delete($post['id']);
+        return redirect()->to('admin/post')->with('msg', 'Post apagado com sucesso!');
+    }
+
+
+    private function buscarPorHash(string $hash): array
+    {
+        $id = IdCodec::decode($hash);
+        $post = $id === null ? null : (new PostModel())->find($id);
+        if ($post === null) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+        return $post;
+    }
+
 }
 
 

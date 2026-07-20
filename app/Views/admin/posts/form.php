@@ -18,7 +18,7 @@
     <?php endif ?>
 
     <form method="post" action="<?= $post
-        ? site_url('admin/posts/atualizar/')
+        ? site_url('admin/posts/atualizar/' . \App\Libraries\IdCodec::encode((int) $post['id']))
         : site_url('admin/posts/criar') ?>">
         <?= csrf_field() ?>
         <div class="mb-3">
