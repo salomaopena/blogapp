@@ -10,5 +10,10 @@ $routes->get('/', 'Home::index');
 
 $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
+
+    // rotas de postas
+    $routes->get('posts', 'Posts::index');
+    $routes->get('posts/novo', 'Posts::novo');
+    $routes->post('posts/criar', 'Posts::criar');
 });
 
