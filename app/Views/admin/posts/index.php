@@ -40,7 +40,8 @@
                         <td class="text-secondary"><?= esc(date('d/m/Y', strtotime($post['created_at']))) ?>
                         </td>
                         <td class="text-end pe-4">
-                            <a class="btn btn-sm btn-outline-secondary" href="<?= site_url('admin/posts/editar/' . $hash) ?>">
+                            <a class="btn btn-sm btn-outline-secondary"
+                                href="<?= site_url('admin/posts/editar/' . $hash) ?>">
                                 <i class="bi bi-pencil"></i>
                             </a>
                             <form method="post" action="<?= site_url('admin/posts/apagar/' . $hash) ?>" class="d-inline">

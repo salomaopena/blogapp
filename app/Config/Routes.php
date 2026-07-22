@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
 service('auth')->routes($routes);
 
 $routes->get('/', 'Home::index');
+$routes->get('post/(:segment)', 'Home::post/$1');
 
 $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
