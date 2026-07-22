@@ -70,7 +70,7 @@ class Posts extends BaseController
     {
         $post = $this->buscarPorHash($hash);
         (new PostModel())->delete($post['id']);
-        return redirect()->to('admin/post')->with('msg', 'Post apagado com sucesso!');
+        return redirect()->to('admin/posts')->with('msg', 'Post apagado com sucesso!');
     }
 
 

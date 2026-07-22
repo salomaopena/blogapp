@@ -44,12 +44,14 @@
                                 href="<?= site_url('admin/posts/editar/' . $hash) ?>">
                                 <i class="bi bi-pencil"></i>
                             </a>
-                            <form method="post" action="<?= site_url('admin/posts/apagar/' . $hash) ?>" class="d-inline">
-                                <?= csrf_field() ?>
-                                <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Apagar este post?')">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </form>
+                            <?php if (auth()->user()->can('posts.delete')): ?>
+                                <form method="post" action="<?= site_url('admin/posts/apagar/' . $hash) ?>" class="d-inline">
+                                    <?= csrf_field() ?>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Apagar este post?')">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach ?>
