@@ -22,7 +22,7 @@
             <div class="offcanvas-header d-lg-none pb-0">
                 <span class="brand text-white fs-5"><i class="bi bi-journal-richtext text-danger me-1">
 
-                </i>Blog App</span>
+                    </i>Blog App</span>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     data-bs-target="#menuAdmin"></button>
             </div>
@@ -34,20 +34,31 @@
                 <ul class="nav nav-pills flex-column mb-auto gap-1">
                     <li><a class="nav-link <?= url_is('admin') ? 'active' : '' ?>" href="<?= site_url('admin') ?>">
                             <i class="bi bi-speedometer2 me-2"></i>Painel</a></li>
-                    
-                            <li><a class="nav-link <?= url_is('admin/posts*') ? 'active' : '' ?>"
+
+                    <li><a class="nav-link <?= url_is('admin/posts*') ? 'active' : '' ?>"
                             href="<?= site_url('admin/posts') ?>">
                             <i class="bi bi-file-earmark-text me-2"></i>Posts</a></li>
+
+                    <?php if (auth()->user()->can('users.manage')): ?>
+                        <li>
+                            <a class="nav-link <?= url_is('admin/usuarios*') ? 'active' : '' ?>"
+                                href="<?= site_url('admin/usuarios') ?>">
+                                <i class="bi bi-people me-2"></i>Utilizadores</a>
+                            </li>
+                    <?php endif; ?>
                 </ul>
                 <hr class="text-secondary">
                 <div class="d-flex align-items-center gap-2 px-2">
                     <div class="avatar">
-                        <?= strtoupper(substr(auth()->user()->username ?? auth()->user()->email, 0, 1)) ?></div>
+                        <?= strtoupper(substr(auth()->user()->username ?? auth()->user()->email, 0, 1)) ?>
+                    </div>
                     <div class="flex-grow-1 text-truncate">
                         <div class="text-white small fw-semibold">
-                            <?= esc(auth()->user()->username ?? auth()->user()->email) ?></div>
+                            <?= esc(auth()->user()->username ?? auth()->user()->email) ?>
+                        </div>
                         <div class="text-secondary" style="font-size:.75rem">
-                            <?= esc(implode(', ', auth()->user()->getGroups())) ?></div>
+                            <?= esc(implode(', ', auth()->user()->getGroups())) ?>
+                        </div>
                     </div>
                     <a href="<?= site_url('logout') ?>" class="text-secondary" title="Sair"><i
                             class="bi bi-box-arrow-right"></i></a>

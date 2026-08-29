@@ -20,5 +20,8 @@ $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->post('posts/atualizar/(:segment)', 'Posts::atualizar/$1', ['filter' => 'permission:posts.edit']);
     $routes->post('posts/apagar/(:segment)', 'Posts::apagar/$1', ['filter' => 'permission:posts.delete']);
 
+    $routes->get('usuarios', "UsuariosController::index", ['filter' => 'permission:users.manage']);
+    $routes->get('usuarios/papel/(:num)', "UsuariosController::papel/$1", ['filter' => 'permission:users.manage']);
+
 });
 
