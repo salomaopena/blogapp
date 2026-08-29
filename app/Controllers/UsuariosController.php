@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Libraries\IdCodec;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Shield\Models\UserModel;
 
@@ -15,6 +16,13 @@ class UsuariosController extends BaseController
 
     public function papel($id)
     {
+
+        $id = IdCodec::decode($id);
+        
+        if (empty($id)) {
+            return redirect()->back()->with('erros', 'Ocorreu um erro com os dados submetidos')->withInput();
+        }
+        
         $user = (new UserModel())->findById($id);
         $grupo = $this->request->getPost('grupo');
 

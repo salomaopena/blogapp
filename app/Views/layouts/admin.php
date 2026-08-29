@@ -44,8 +44,25 @@
                             <a class="nav-link <?= url_is('admin/usuarios*') ? 'active' : '' ?>"
                                 href="<?= site_url('admin/usuarios') ?>">
                                 <i class="bi bi-people me-2"></i>Utilizadores</a>
-                            </li>
+                        </li>
                     <?php endif; ?>
+
+                    <li>
+                        <a class="nav-link d-flex align-items-center <?= url_is('admin/notificacoes') ? 'active' : '' ?>"
+                            href="<?= site_url('admin/notificacoes') ?>">
+                            <i class="bi bi-bell me-2"></i> Notificações
+
+                            <?php $naoLidasMenu = (new \App\Models\NotificacaoModel())
+                                ->naoLidasDe(auth()->id()); ?>
+
+                            <?php if ($naoLidasMenu): ?>
+                                <span class="badge rounded-pill text-bg-danger ms-auto">
+                                    <?= count($naoLidasMenu) ?></span>
+                            <?php endif ?>
+
+                        </a>
+                    </li>
+
                 </ul>
                 <hr class="text-secondary">
                 <div class="d-flex align-items-center gap-2 px-2">

@@ -14,7 +14,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $cores = ['admin' => 'danger', 'editor' => 'info', 'member' => 'secondary']; ?>
+                <?php $cores = ['admin' => 'danger', 'editor' => 'info', 'member' => 'secondary']; 
+
+                use App\Libraries\IdCodec;?>
                 <?php foreach ($usuarios as $u): ?>
                     <tr>
                         <td class="ps-4">
@@ -27,7 +29,7 @@
                             <?php endforeach ?>
                         </td>
                         <td class="pe-4">
-                            <form method="post" action="<?= site_url('admin/usuarios/papel/' . $u->id) ?>"
+                            <form method="post" action="<?= site_url('admin/usuarios/papel/' . IdCodec::encode($u->id)) ?>"
                                 class="input-group input-group-sm">
                                 <?= csrf_field() ?>
                                 <select name="grupo" class="form-select">

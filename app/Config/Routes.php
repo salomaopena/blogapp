@@ -11,6 +11,7 @@ $routes->get('post/(:segment)', 'Home::post/$1');
 
 $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
+    $routes->get('notificacoes', 'Dashboard::notificacoes');
 
     // rotas de postas
     $routes->get('posts', 'Posts::index');
@@ -21,7 +22,8 @@ $routes->group('admin', ['filter' => 'session'], static function ($routes) {
     $routes->post('posts/apagar/(:segment)', 'Posts::apagar/$1', ['filter' => 'permission:posts.delete']);
 
     $routes->get('usuarios', "UsuariosController::index", ['filter' => 'permission:users.manage']);
-    $routes->get('usuarios/papel/(:num)', "UsuariosController::papel/$1", ['filter' => 'permission:users.manage']);
+    $routes->post('usuarios/papel/(:segment)', "UsuariosController::papel/$1", ['filter' => 'permission:users.manage']);
+    
 
 });
 
