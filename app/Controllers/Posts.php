@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Libraries\IdCodec;
-use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\PostModel;
+use CodeIgniter\Events\Events;
 
 class Posts extends BaseController
 {
@@ -31,6 +31,9 @@ class Posts extends BaseController
         if (!$model->insert($dados)) {
             return redirect()->back()->withInput()->with('erros', $model->errors());
         }
+
+        // configurar emails
+        Events::trigger('post_criado',$dados);
 
         return redirect()->to('admin/posts')->with('msg', 'Post criado com sucesso!');
     }
